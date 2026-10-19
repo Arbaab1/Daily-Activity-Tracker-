@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0f14">
+<title>Aurum · Daily Ritual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0f14;--card:rgba(255,255,255,.035);--card2:rgba(255,255,255,.06);--ink:#f3ede1;--mut:#9aa3ad;--gold:#d4b57a;--gold2:#a98a52;--line:rgba(212,181,122,.2);--jade:#58b39a;--wine:#c46a72;--glow:rgba(212,181,122,.14);--nav:rgba(14,19,26,.82);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f7f2e8;--card:rgba(255,255,255,.7);--card2:#fffdf8;--ink:#1b222b;--mut:#666d76;--gold:#8f6f31;--gold2:#6f5524;--line:rgba(143,111,49,.3);--jade:#2b8670;--wine:#b2474f;--glow:rgba(176,140,70,.2);--nav:rgba(247,242,232,.88)}}
+:root[data-theme="light"]{--bg:#f7f2e8;--card:rgba(255,255,255,.7);--card2:#fffdf8;--ink:#1b222b;--mut:#666d76;--gold:#8f6f31;--gold2:#6f5524;--line:rgba(143,111,49,.3);--jade:#2b8670;--wine:#b2474f;--glow:rgba(176,140,70,.2);--nav:rgba(247,242,232,.88)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;color:var(--ink);font:400 16px/1.6 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased;background:radial-gradient(900px 420px at 50% -80px,var(--glow),transparent 70%),var(--bg);background-attachment:fixed}
+h1,h2,h3,.serif{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;margin:0}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+.app{max-width:520px;margin:0 auto;padding:22px 18px 130px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.brand{font:600 26px "Cormorant Garamond",serif;letter-spacing:.08em;color:var(--gold)}
+.pill{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);border-radius:99px;padding:5px 12px}
+.hi{font:500 34px/1.1 "Cormorant Garamond",serif;margin-bottom:4px}.sub{color:var(--mut);font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px;margin-bottom:16px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 12px 40px rgba(0,0,0,.18)}
+.lab{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;font-weight:600}
+.dn{display:flex;align-items:center;justify-content:space-between;margin:18px 0 14px}
+.dn button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);color:var(--gold);font-size:18px}.dn button[disabled]{opacity:.3}
+.dn b{font:600 22px "Cormorant Garamond",serif}
+.score{display:flex;align-items:center;gap:20px}
+.ring{position:relative;width:128px;height:128px;flex:none}.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.rt{fill:none;stroke:var(--line);stroke-width:7}.rp{fill:none;stroke:url(#gg);stroke-width:7;stroke-linecap:round;transition:stroke-dashoffset .9s cubic-bezier(.2,.8,.2,1)}
+.ring div{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.big{font:600 40px/1 "Cormorant Garamond",serif;background:linear-gradient(135deg,#f0dcae,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+@media (prefers-color-scheme:light){.big{background:linear-gradient(135deg,#b08a40,#7a5c24);-webkit-background-clip:text;background-clip:text}}
+.ring small{color:var(--mut);font-size:12px}
+.stats{display:grid;gap:10px;flex:1}.stats div{display:flex;justify-content:space-between;font-size:14px;color:var(--mut)}.stats b{color:var(--ink);font-weight:600}
+.q{font:500 22px/1.4 "Cormorant Garamond",serif;font-style:italic}
+.h{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-top:1px solid var(--line)}.h:first-of-type{border-top:0;padding-top:4px}
+.h b{display:block;font-weight:600;font-size:15.5px}.h small{color:var(--mut);font-size:13px;line-height:1.4;display:block}
+.hc{display:flex;gap:8px;flex:none}
+.c{width:50px;height:46px;border-radius:14px;border:1px solid var(--line);font-size:20px;transition:transform .15s,background .2s,border-color .2s;filter:grayscale(1) opacity(.55)}
+.c:active{transform:scale(.92)}.c.on{filter:none}.c.y.on{background:color-mix(in srgb,var(--jade) 22%,transparent);border-color:var(--jade)}.c.n.on{background:color-mix(in srgb,var(--wine) 22%,transparent);border-color:var(--wine)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:6px 0}.row b{font-weight:600}.tag{font-size:12.5px;color:var(--gold);border:1px solid var(--line);border-radius:99px;padding:3px 10px;white-space:nowrap}.tag.ok{color:var(--jade);border-color:var(--jade)}
+textarea,input[type=text]{width:100%;background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:13px 14px;font:inherit;color:var(--ink);resize:none}
+textarea:focus,input:focus{outline:0;border-color:var(--gold)}
+.btn{display:inline-block;background:linear-gradient(135deg,#e6cd98,var(--gold2));color:#1a1408;font-weight:700;border-radius:14px;padding:13px 22px;letter-spacing:.03em;transition:transform .15s,filter .2s}.btn:active{transform:scale(.97)}.btn:hover{filter:brightness(1.06)}
+.btn.o{background:none;border:1px solid var(--gold);color:var(--gold)}.btn[disabled]{opacity:.5}
+.pz{white-space:pre-wrap;font:500 15.5px/1.75 Manrope,sans-serif;background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:12px 0 14px;overflow-x:auto}
+.ans{display:flex;gap:10px}.ans input{flex:1;min-width:0;text-transform:uppercase;letter-spacing:.06em}
+.msg{min-height:22px;font-size:14px;margin-top:8px}.msg.no{color:var(--wine)}.msg.ok{color:var(--jade)}
+.shake{animation:sh .4s}@keyframes sh{25%,75%{transform:translateX(-6px)}50%{transform:translateX(6px)}}
+.grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:260px;margin:14px auto}
+.pd{aspect-ratio:1;border-radius:16px;border:1px solid var(--line);background:var(--card2);transition:background .15s,transform .1s}
+.pd.on{background:linear-gradient(135deg,#e6cd98,var(--gold2));transform:scale(.94)}
+.g16{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0}
+.g16 button{aspect-ratio:1;border-radius:14px;border:1px solid var(--line);background:var(--card2);font:600 22px "Cormorant Garamond",serif}
+.g16 button.d{opacity:.25}.g16 button.b{border-color:var(--wine)}
+.gm{text-align:center;color:var(--mut);font-size:14px;min-height:22px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.cal i{font-style:normal;text-align:center;font-size:11px;color:var(--mut);letter-spacing:.1em}
+.cl{aspect-ratio:1;border-radius:12px;border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:13px;line-height:1.15;position:relative}
+.cl b{font:600 16px "Cormorant Garamond",serif}.cl small{font-size:10.5px;color:var(--mut)}.cl.t{outline:2px solid var(--gold);outline-offset:1px}.cl.f{opacity:.35}.cl.s:after{content:"";position:absolute;bottom:5px;width:4px;height:4px;border-radius:50%;background:var(--mut)}
+.bars{display:flex;align-items:flex-end;gap:3px;height:80px}.bars span{flex:1;background:linear-gradient(var(--gold),var(--gold2));border-radius:3px 3px 0 0;min-height:2px;opacity:.9}
+nav{position:fixed;left:0;right:0;bottom:0;z-index:10;background:var(--nav);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-top:1px solid var(--line);padding:8px 14px calc(8px + env(safe-area-inset-bottom,0px))}
+nav div{max-width:520px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+nav button{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 0;border-radius:14px;color:var(--mut);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
+nav button.on{color:var(--gold)}nav svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.fade{animation:fd .5s ease both}@keyframes fd{from{opacity:0;transform:translateY(8px)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0dcae"/><stop offset="1" stop-color="#a98a52"/></linearGradient></defs></svg>
+<div class="app" id="app"></div>
+<nav><div id="nav">
+<button data-a="tab" data-t="today"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>Today</button>
+<button data-a="tab" data-t="mind"><svg viewBox="0 0 24 24"><path d="M9 3a4 4 0 0 0-4 4 4 4 0 0 0-1 6 4 4 0 0 0 3 6 3 3 0 0 0 5 1V4a2 2 0 0 0-3-1zM15 3a4 4 0 0 1 4 4 4 4 0 0 1 1 6 4 4 0 0 1-3 6 3 3 0 0 1-5 1"/></svg>Mind</button>
+<button data-a="tab" data-t="month"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Cycle</button>
+</div></nav>
+<script>
+var D={"P": [{"t": "Sequence", "q": "What letter comes next?\n\nC D F I M ?", "f": "One letter"}, {"t": "Cipher", "q": "A message was shifted along the alphabet by a fixed amount:\n\nKTHZX GZNQIX KTWYZSJ\n\nDecode it.", "f": "The message (letters only)"}, {"t": "Logic Grid", "q": "Hana, Rhea and Nina each have exactly one item in every category (no two people share an item).\n\n• Nina owns the dog.\n• Rhea doesn't own the parrot.\n\nWho owns the parrot?", "f": "A first name"}, {"t": "Order", "q": "4 people stand in a line. Everyone has a different height.\n\n• Gavin is taller than Mateo.\n• Ivo is not the tallest.\n• Gavin is not the tallest.\n• Mateo is not the shortest.\n\nWho is the second tallest?", "f": "A first name"}, {"t": "Mini Sudoku", "q": "Fill the grid with digits 1 to 4. Each row, column and 2×2 box holds every digit exactly once.\n\n2 ·  |  · ·\n· 4  |  1 2\n-------------\n· 2  |  · 3\n4 3  |  · ·\n\nEnter the digits of row 1, left to right.", "f": "Four digits"}, {"t": "Truth & Lies", "q": "Each person is either truthful (every statement true) or a liar (every statement false).\n\n• Sami: “Farah and Elio are both liars.”\n• Farah: “Exactly one of Quinn and Sami is a liar.”\n• Elio: “At least 4 of Farah, Sami and Quinn are liars.”\n• Quinn: “Exactly one of Sami and Elio is a liar.”\n\nWho are the liars?", "f": "All liars' names, alphabetical, no spaces"}, {"t": "Sequence", "q": "Two sequences are woven together. What letter comes next?\n\nD V F T H R ?", "f": "One letter"}, {"t": "Logic Grid", "q": "Nina, Rhea and Tara each have exactly one item in every category (no two people share an item).\n\n• Nina doesn't drink coffee.\n• Rhea drinks juice.\n• The rabbit owner is the juice drinker.\n• Nina doesn't own the dog.\n\nWho owns the parrot?", "f": "A first name"}, {"t": "Cipher", "q": "Every letter was mirrored across the alphabet (first becomes last):\n\nHNZOO HGVKH DRM\n\nDecode it.", "f": "The message (letters only)"}, {"t": "Order", "q": "5 people stand in a line. Everyone has a different height.\n\n• Gavin is taller than Jada.\n• Rhea is taller than Gavin.\n• Tara is taller than Ivo.\n• Ivo is taller than Rhea.\n\nWho is the third tallest?", "f": "A first name"}, {"t": "Mini Sudoku", "q": "Fill the grid with digits 1 to 4. Each row, column and 2×2 box holds every digit exactly once.\n\n3 1  |  2 ·\n2 ·  |  3 ·\n-------------\n· 3  |  1 ·\n1 2  |  · ·\n\nEnter the digits of row 4, left to right.", "f": "Four digits"}, {"t": "Truth & Lies", "q": "Each person is either truthful (every statement true) or a liar (every statement false).\n\n• Tara: “Nina and Aria are both liars.”\n• Jada: “Aria and Tara are both liars.”\n• Aria: “If Tara is truthful, then Elio is a liar.”\n• Nina: “If Jada is truthful, then Aria is a liar.”\n• Elio: “Tara and Aria are both liars.”\n\nWho are the liars?", "f": "All liars' names, alphabetical, no spaces"}, {"t": "Sequence", "q": "What letter comes next?\n\nB D G I L N ?", "f": "One letter"}, {"t": "Logic Grid", "q": "Mateo, Lena, Hana and Ivo each have exactly one item in every category (no two people share an item).\n\n• Mateo doesn't own the turtle.\n• Ivo owns the dog.\n• Lena owns the rabbit.\n\nWho owns the rabbit?", "f": "A first name"}, {"t": "Cipher", "q": "A repeating-key cipher. Key: RISE\n\nUQKGZXDMEM AW WZWIUWE\n\nDecode it.", "f": "The message (letters only)"}, {"t": "Order", "q": "5 people stand in a line. Everyone has a different height.\n\n• Rhea is taller than Ivo.\n• Ivo is taller than Elio.\n• Rhea is not the tallest.\n• Ivo is taller than Dara.\n• Elio is not the shortest.\n\nWho is the second tallest?", "f": "A first name"}, {"t": "Mini Sudoku", "q": "Fill the grid with digits 1 to 4. Each row, column and 2×2 box holds every digit exactly once.\n\n· 1  |  4 2\n2 ·  |  · ·\n-------------\n4 2  |  3 1\n1 3  |  · ·\n\nEnter the digits of row 2, left to right.", "f": "Four digits"}, {"t": "Truth & Lies", "q": "Each person is either truthful (every statement true) or a liar (every statement false).\n\n• Rhea: “Dara and Kian are the same kind.”\n• Aria: “Dara and Rhea are both liars.”\n• Dara: “Exactly 3 of Elio, Aria, Kian and Rhea are truthful.”\n• Elio: “At least 2 of Dara, Aria, Rhea and Kian are liars.”\n• Kian: “Elio and Aria are the same kind.”\n\nWho are the liars?", "f": "All liars' names, alphabetical, no spaces"}, {"t": "Sequence", "q": "What letter comes next?\n\nB D G K P ?", "f": "One letter"}, {"t": "Logic Grid", "q": "Sami, Bruno, Nina and Chen each have exactly one item in every category (no two people share an item).\n\n• Nina doesn't own the rabbit.\n• Bruno owns the cat.\n• Sami owns the parrot.\n• Sami doesn't drink milk.\n• The rabbit owner is the juice drinker.\n• Bruno drinks water.\n\nWho drinks tea?", "f": "A first name"}, {"t": "Cipher", "q": "A message was shifted along the alphabet by a fixed amount:\n\nVTEF FBGW VEXTK ZHTEL\n\nDecode it.", "f": "The message (letters only)"}, {"t": "Order", "q": "6 people stand in a line. Everyone has a different height.\n\n• Jada is taller than Omar.\n• Hana is taller than Lena.\n• Lena is not the shortest.\n• Jada is taller than Hana.\n• Aria is taller than Jada.\n• Aria is not the tallest.\n\nWho is the fourth tallest?", "f": "A first name"}, {"t": "Mini Sudoku", "q": "Fill the grid with digits 1 to 4. Each row, column and 2×2 box holds every digit exactly once.\n\n· 1  |  2 3\n2 3  |  4 1\n-------------\n· ·  |  1 2\n· 2  |  3 ·\n\nEnter the digits of row 3, left to right.", "f": "Four digits"}, {"t": "Truth & Lies", "q": "Each person is either truthful (every statement true) or a liar (every statement false).\n\n• Gavin: “Exactly one of Omar and Rhea is a liar.”\n• Jada: “Omar or Chen is truthful, possibly both.”\n• Omar: “If Priya is truthful, then Rhea is a liar.”\n• Priya: “Exactly 2 of Gavin, Jada, Omar and Rhea are truthful.”\n• Chen: “Exactly 2 of Rhea, Omar, Jada and Gavin are truthful.”\n• Rhea: “At least 4 of Omar, Chen, Gavin and Priya are liars.”\n\nWho are the liars?", "f": "All liars' names, alphabetical, no spaces"}, {"t": "Sequence", "q": "Two sequences are woven together. What letter comes next?\n\nA X C V E T ?", "f": "One letter"}, {"t": "Logic Grid", "q": "Omar, Sami, Dara and Mateo each have exactly one item in every category (no two people share an item).\n\n• The milk drinker is not the chess fan.\n• Sami doesn't drink milk.\n• Omar owns the rabbit.\n• Mateo enjoys painting.\n• The coffee drinker is not the chess fan.\n• The parrot owner is the chess fan.\n• Sami doesn't enjoy chess.\n• The milk drinker is not the piano fan.\n• Mateo owns the turtle.\n• The juice drinker is the painting fan.\n\nWho enjoys piano?", "f": "A first name"}, {"t": "Cipher", "q": "A repeating-key cipher. Key: FOCUS\n\nJOTFQ WWUY TWWIBL IOA\n\nDecode it.", "f": "The message (letters only)"}, {"t": "Order", "q": "6 people stand in a line. Everyone has a different height.\n\n• Aria is taller than Jada.\n• Jada is taller than Bruno.\n• Bruno is not the shortest.\n• Gavin is not the tallest.\n• Hana is not the tallest.\n• Gavin is taller than Aria.\n\nWho is the third tallest?", "f": "A first name"}], "H": [7887591644293153, 8616605276500365, 8158448933887497, 2220898150595027, 4995138719574529, 1063204000167960, 2234080714677041, 7704845468657292, 1938664047506638, 6938866122341864, 7006040636843053, 8083206032920402, 5984678804261136, 6948400286020887, 7992598936013914, 6938866122341864, 3249789577494145, 7614363693541491, 7156198601619263, 2342533421875777, 4336196793688827, 8158448933887497, 1645930917232562, 5805674056080986, 5955820763076559, 2342533421875777, 7208581601879185, 5787196247687882]};
+var QUOTES=["Discipline is the quiet promise you keep to your future self.","Small, repeated actions build a life that feels effortless from the outside.","You don't need more time. You need fewer excuses and one honest hour.","Make the next right move, then the one after that.","Motivation starts the engine. Habit drives the distance.","A calm mind decides better than a busy one.","Protect your sleep, and your sleep will protect your ambition.","Every rep is a vote for the person you are becoming.","Progress is rarely loud. It is steady, private and cumulative.","Be consistent when it is boring. That is where the edge is built.","Your attention is your most valuable currency. Spend it deliberately.","Do it tired, do it imperfectly, but do it.","The standard you walk past is the standard you accept.","Strong routines create the freedom to focus on what matters.","One focused hour beats five distracted ones.","Show up for the version of you that is watching.","Rest is part of the work, not a reward for it.","Choose the harder right over the easier wrong, once a day.","Where attention goes, energy flows, and results follow.","You are one decision away from a better day.","Excellence is a habit practised in private.","Start before you feel ready. Readiness is built in motion.","Today's effort is tomorrow's ease.","Win the morning, and the day follows.","Consistency turns ordinary days into extraordinary years.","Do not count the days. Make the days count.","Strength is built in the moments you would rather skip.","Quiet the noise. Keep the promise.","Clarity comes from action, not from waiting.","Respect your time and others will too.","Build a life you do not need a vacation from.","Finish what you start, and start with what matters."];
+var HAB=[["5-minute meditation","Settle your mind before the world asks for it."],["1+ hour of learning","One focused hour compounds into expertise."],["Asleep before 11 PM","Recovery is where growth is locked in."],["Screen time under 7 hours","Reclaim your attention for what matters."],["1+ hour workout","Train the body, sharpen the mind."]];
+var START=new Date(2026,9,20),ND=32,K='aurum_v1',S={days:{}},tab='today',view='',later=[];
+function $(i){return document.getElementById(i)}
+function pad(n){return n<10?'0'+n:''+n}
+function key(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
+function pk(k){return new Date(+k.slice(0,4),+k.slice(5,7)-1,+k.slice(8,10))}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+var DAYS=[],PZ={},pc=0;
+for(var i=0;i<ND;i++){var d=new Date(START.getFullYear(),START.getMonth(),START.getDate()+i);DAYS.push(key(d));PZ[key(d)]=d.getDay()===0?-1:pc++}
+function tkey(){var m=/date=(\d{4}-\d{2}-\d{2})/.exec(location.hash);return m?m[1]:key(new Date())}
+function phase(){var t=tkey();return t<DAYS[0]?'pre':(t>DAYS[ND-1]?'post':'on')}
+function lastK(){var t=tkey();return t>DAYS[ND-1]?DAYS[ND-1]:t}
+function load(){try{var v=JSON.parse(localStorage.getItem(K));if(v&&v.days&&typeof v.days==='object')S=v}catch(e){}}
+function save(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
+function day(k){if(!S.days[k])S.days[k]={h:[0,0,0,0,0],p:0,g1:0,g2:0,in:'',gr:''};return S.days[k]}
+function hp(k){var d=S.days[k];return d?d.h.filter(function(x){return x===1}).length:0}
+function pts(k){var d=S.days[k];return d?hp(k)*10+(d.p?20:0)+(d.g1||0)+(d.g2||0):0}
+function poss(k){return 50+(PZ[k]>=0?20:0)+20}
+function streak(){var k=lastK(),i=DAYS.indexOf(k),n=0;if(i<0)return 0;if(hp(k)<3&&i>0)i--;for(;i>=0;i--){if(hp(DAYS[i])>=3)n++;else break}return n}
+function totals(){var t=0,p=0,lk=lastK();DAYS.forEach(function(k){if(k<=lk&&phase()!=='pre'){t+=pts(k);p+=poss(k)}});return{t:t,p:p,pc:p?t/p:0}}
+function grade(p){return p>=.85?'Elite':(p>=.7?'Distinguished':(p>=.5?'Consistent':'Building'))}
+function clearL(){later.forEach(clearTimeout);later=[]}
+function L(f,ms){later.push(setTimeout(f,ms))}
+function greet(){var h=new Date().getHours();return h<12?'Good morning':(h<17?'Good afternoon':'Good evening')}
+function fd(k,o){return pk(k).toLocaleDateString('en-GB',o||{weekday:'short',day:'numeric',month:'short'})}
+function head(){var i=DAYS.indexOf(tkey());return '<div class="top"><div class="brand">AURUM</div><div class="pill">'+(phase()==='on'?'Day '+(i+1)+' / '+ND:(phase()==='pre'?'Begins 20 Oct':'Complete'))+'</div></div>'}
+function ring(pc,a,b){var C=326.7;return '<div class="ring"><svg viewBox="0 0 120 120"><circle class="rt" cx="60" cy="60" r="52"/><circle class="rp" cx="60" cy="60" r="52" stroke-dasharray="'+C+'" stroke-dashoffset="'+(C*(1-Math.min(1,pc)))+'"/></svg><div><span class="big">'+a+'</span><small>of '+b+' pts</small></div></div>'}
+function today(){
+ var ph=phase(),k=view,d=day(k),i=DAYS.indexOf(k),lk=lastK(),h='';
+ h+=head()+'<div class="fade"><div class="hi">'+greet()+'.</div><div class="sub">Make today count. Every mark is a promise kept.</div></div>';
+ h+='<div class="dn"><button data-a="nav" data-d="-1" aria-label="Previous day"'+(i<=0?' disabled':'')+'>‹</button><b>'+fd(k,{weekday:'long',day:'numeric',month:'long'})+'</b><button data-a="nav" data-d="1" aria-label="Next day"'+(k>=lk?' disabled':'')+'>›</button></div>';
+ var p=pts(k),m=poss(k);
+ h+='<div class="card"><div class="score">'+ring(p/m,p,m)+'<div class="stats"><div>Habits<b>'+hp(k)+' / 5</b></div><div>Mind<b>'+((d.p?20:0)+(d.g1||0)+(d.g2||0))+' pts</b></div><div>Streak<b>'+streak()+' days</b></div></div></div></div>';
+ h+='<div class="card"><div class="lab">Thought for the day</div><div class="q">“'+QUOTES[Math.max(i,0)%QUOTES.length]+'”</div></div>';
+ h+='<div class="card"><div class="lab">Daily rituals · 10 pts each</div>';
+ HAB.forEach(function(x,n){var v=d.h[n];h+='<div class="h"><div><b>'+x[0]+'</b><small>'+x[1]+'</small></div><div class="hc"><button class="c y'+(v===1?' on':'')+'" data-a="hab" data-i="'+n+'" data-v="1" aria-pressed="'+(v===1)+'" aria-label="Done: '+x[0]+'">✅</button><button class="c n'+(v===2?' on':'')+'" data-a="hab" data-i="'+n+'" data-v="2" aria-pressed="'+(v===2)+'" aria-label="Missed: '+x[0]+'">❎</button></div></div>'});
+ h+='</div>';
+ h+='<div class="card"><div class="lab">Mind training</div><div class="row"><b>Daily puzzle</b><span class="tag'+(d.p?' ok':'')+'">'+(PZ[k]<0?'Rest day':(d.p?'Solved +20':'+20 pts'))+'</span></div><div class="row"><b>Memory Grid</b><span class="tag'+(d.g1?' ok':'')+'">'+(d.g1?'+'+d.g1:'up to 10')+'</span></div><div class="row"><b>Number Sprint</b><span class="tag'+(d.g2?' ok':'')+'">'+(d.g2?'+'+d.g2:'up to 10')+'</span></div>'+(k===tkey()?'<div style="margin-top:12px"><button class="btn o" data-a="tab" data-t="mind">Open Mind</button></div>':'')+'</div>';
+ h+='<div class="card"><div class="lab">Reflection</div><textarea rows="2" data-n="in" placeholder="Today\'s intention…" aria-label="Intention">'+esc(d.in||'')+'</textarea><textarea rows="2" data-n="gr" style="margin-top:10px" placeholder="One win or gratitude from today…" aria-label="Gratitude">'+esc(d.gr||'')+'</textarea></div>';
+ return h}
+function pre(){var n=Math.round((pk(DAYS[0])-pk(tkey()))/864e5);
+ var h=head()+'<div class="fade"><div class="hi">Your ritual begins soon.</div><div class="sub">A 32-day cycle: 20 October to 20 November.</div></div>';
+ h+='<div class="card" style="text-align:center;margin-top:20px"><div class="lab">Starts in</div><div class="big" style="font-size:64px">'+n+'</div><div class="sub">day'+(n===1?'':'s')+' · Tuesday, 20 October</div></div>';
+ h+='<div class="card"><div class="lab">Your daily rituals</div>';HAB.forEach(function(x){h+='<div class="h"><div><b>'+x[0]+'</b><small>'+x[1]+'</small></div></div>'});
+ return h+'</div><div class="card"><div class="q">“'+QUOTES[0]+'”</div></div>'}
+function puzInner(k){var d=day(k),i=PZ[k];
+ if(i<0)return '<div class="lab">Daily puzzle</div><div class="q">Sunday is a day of rest.</div><div class="sub" style="margin-top:6px">No puzzle today. Let your mind recover.</div>';
+ var P=D.P[i];if(d.p)return '<div class="lab">Daily puzzle · '+(i+1)+' of 28</div><div class="row"><b>'+P.t+'</b><span class="tag ok">Solved +20</span></div><div class="sub">Excellent work. Come back tomorrow for a new challenge.</div>';
+ return '<div class="lab">Daily puzzle · '+(i+1)+' of 28 · +20 pts</div><b>'+P.t+'</b><div class="pz">'+esc(P.q)+'</div><div class="ans"><input type="text" id="pin" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Your answer" aria-label="Answer"><button class="btn" data-a="pz">Submit</button></div><div class="sub" style="margin-top:6px">Format: '+esc(P.f)+'</div><div class="msg" id="pm"></div>'}
+function mind(){var ph=phase(),h=head();
+ if(ph!=='on')return h+'<div class="card"><div class="lab">Mind training</div><div class="q">'+(ph==='pre'?'Unlocks on 20 October.':'This cycle is complete.')+'</div></div>';
+ var k=tkey();
+ h+='<div class="fade"><div class="hi">Train your mind.</div><div class="sub">One puzzle and two games a day. Sundays are puzzle-free.</div></div><div style="height:18px"></div>';
+ h+='<div class="card" id="puz">'+puzInner(k)+'</div>';
+ h+='<div class="card"><div class="lab">Memory Grid · up to 10 pts</div><div class="sub">Watch the pattern, then repeat it. Clear 7 steps for full points.</div><div class="grid9" id="mg">'+[0,1,2,3,4,5,6,7,8].map(function(n){return '<button class="pd" data-a="pad" data-p="'+n+'" aria-label="Pad '+(n+1)+'"></button>'}).join('')+'</div><div class="gm" id="mm">Press start</div><div style="text-align:center;margin-top:10px"><button class="btn" data-a="mgs">Start</button></div></div>';
+ h+='<div class="card"><div class="lab">Number Sprint · up to 10 pts</div><div class="sub">Tap 1 to 16 in order, as fast as you can. Under 30 s for full points.</div><div class="g16" id="sg"></div><div class="gm" id="sm">Press start</div><div style="text-align:center;margin-top:10px"><button class="btn" data-a="sps">Start</button></div></div>';
+ return h}
+function month(){var ph=phase(),t=totals(),h=head(),lk=lastK(),mx=0;DAYS.forEach(function(k){mx+=poss(k)});
+ h+='<div class="fade"><div class="hi">'+(ph==='post'?'Final score.':'Your cycle.')+'</div><div class="sub">20 Oct – 20 Nov · 32 days</div></div><div style="height:18px"></div>';
+ h+='<div class="card"><div class="score">'+ring(t.pc,t.t,ph==='post'?mx:t.p||mx)+'<div class="stats"><div>'+(ph==='post'?'Final':'So far')+'<b>'+Math.round(t.pc*100)+'%</b></div><div>Rank<b>'+grade(t.pc)+'</b></div><div>Max possible<b>'+mx+'</b></div></div></div></div>';
+ h+='<div class="card"><div class="lab">Daily performance</div><div class="bars">'+DAYS.map(function(k){return '<span style="height:'+(k<=lk&&ph!=='pre'?Math.max(3,Math.round(pts(k)/poss(k)*100)):3)+'%;opacity:'+(k<=lk&&ph!=='pre'?.95:.2)+'"></span>'}).join('')+'</div></div>';
+ var off=(START.getDay()+6)%7,c='<div class="cal">'+['M','T','W','T','F','S','S'].map(function(x){return '<i>'+x+'</i>'}).join('');for(var i=0;i<off;i++)c+='<span></span>';
+ DAYS.forEach(function(k){var f=k>lk||ph==='pre',p=pts(k)/poss(k),dd=pk(k);c+='<button class="cl'+(f?' f':'')+(k===tkey()?' t':'')+(PZ[k]<0?' s':'')+'" data-a="cell" data-k="'+k+'"'+(f?' disabled':'')+' style="'+(f?'':'background:rgba(212,181,122,'+(.06+p*.4)+')')+'"><b>'+dd.getDate()+'</b><small>'+(f?'':pts(k))+'</small></button>'});
+ h+='<div class="card"><div class="lab">Calendar · tap a day to review</div>'+c+'</div></div>';
+ h+='<div class="card"><div class="lab">How scoring works</div><div class="sub">5 rituals × 10 pts + daily puzzle 20 pts + two brain games up to 10 pts each. Max 90 per day (70 on Sundays). Your final rank is total points ÷ points available.</div></div>';
+ return h}
+function render(top){clearL();var a=$('app'),ph=phase();
+ if(!view||(ph==='on'&&view>lastK()))view=ph==='pre'?DAYS[0]:lastK();
+ a.innerHTML=tab==='today'?(ph==='pre'?pre():today()):(tab==='mind'?mind():month());
+ Array.prototype.forEach.call($('nav').children,function(b){b.classList.toggle('on',b.getAttribute('data-t')===tab)});
+ if(tab==='mind'&&ph==='on')sprintInit();
+ if(top)window.scrollTo(0,0)}
+/* games */
+var mg={s:[],pos:0,busy:true,run:false};
+function mset(t){var e=$('mm');if(e)e.textContent=t}
+function lit(p){var b=document.querySelector('#mg [data-p="'+p+'"]');if(!b)return;b.classList.add('on');L(function(){b.classList.remove('on')},320)}
+function award(g,v){var d=day(tkey());if(v>(d[g]||0)){d[g]=v;save()}}
+function mgNext(){mg.s.push(Math.floor(Math.random()*9));mg.pos=0;mg.busy=true;mset('Watch carefully…');mg.s.forEach(function(p,j){L(function(){lit(p)},600+j*650)});L(function(){mg.busy=false;mset('Your turn · '+mg.s.length+' steps')},600+mg.s.length*650)}
+function mgEnd(c){mg.run=false;mg.busy=true;var p=c>=7?10:(c>=5?7:(c>=3?4:0));award('g1',p);mset(c>=7?'Flawless! +'+p+' pts':'Cleared '+c+' steps · +'+p+' pts (best of day counts)')}
+function sprintInit(){var g=$('sg');if(g)g.innerHTML=''}
+var sp={n:1,t0:0,iv:0,run:false};
+function sprintStart(){var g=$('sg'),a=[];for(var i=1;i<=16;i++)a.push(i);for(var j=15;j>0;j--){var r=Math.floor(Math.random()*(j+1)),t=a[j];a[j]=a[r];a[r]=t}
+ g.innerHTML=a.map(function(n){return '<button data-a="sn" data-n="'+n+'">'+n+'</button>'}).join('');sp.n=1;sp.t0=Date.now();sp.run=true;clearInterval(sp.iv);
+ sp.iv=setInterval(function(){var e=$('sm');if(!e||!sp.run){clearInterval(sp.iv);return}e.textContent='Find '+sp.n+' · '+((Date.now()-sp.t0)/1000).toFixed(1)+'s'},100)}
+function sprintTap(b){if(!sp.run)return;var n=+b.getAttribute('data-n');
+ if(n===sp.n){b.classList.add('d');sp.n++;if(sp.n>16){sp.run=false;clearInterval(sp.iv);var s=(Date.now()-sp.t0)/1000,p=s<=30?10:(s<=45?7:4);award('g2',p);$('sm').textContent='Done in '+s.toFixed(1)+'s · +'+p+' pts'}}
+ else{b.classList.add('b');setTimeout(function(){b.classList.remove('b')},250)}}
+/* puzzle */
+function h53(s){var h1=0xdeadbeef,h2=0x41c6ce57,i,c;for(i=0;i<s.length;i++){c=s.charCodeAt(i);h1=Math.imul(h1^c,2654435761);h2=Math.imul(h2^c,1597334677)}
+h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);return 4294967296*(2097151&h2)+(h1>>>0)}
+function pzCheck(){var k=tkey(),i=PZ[k],inp=$('pin'),m=$('pm'),v=String(inp.value).toUpperCase().replace(/[^A-Z0-9]/g,'');
+ if(!v){m.className='msg no';m.textContent='Enter your answer first.';return}
+ if(h53(v)===D.H[i]){var d=day(k);d.p=1;save();$('puz').innerHTML=puzInner(k);try{navigator.vibrate&&navigator.vibrate(30)}catch(e){}}
+ else{m.className='msg no';m.textContent='Not quite. Think it through and try again.';var c=$('puz');c.classList.remove('shake');void c.offsetWidth;c.classList.add('shake')}}
+/* events */
+document.addEventListener('click',function(e){var b=e.target.closest('[data-a]');if(!b)return;var a=b.getAttribute('data-a');
+ if(a==='tab'){tab=b.getAttribute('data-t');render(true)}
+ else if(a==='nav'){var i=DAYS.indexOf(view)+(+b.getAttribute('data-d'));if(i>=0&&DAYS[i]<=lastK()){view=DAYS[i];render()}}
+ else if(a==='cell'){view=b.getAttribute('data-k');tab='today';render(true)}
+ else if(a==='hab'&&phase()==='on'){var d=day(view),i=+b.getAttribute('data-i'),v=+b.getAttribute('data-v');d.h[i]=d.h[i]===v?0:v;save();try{navigator.vibrate&&navigator.vibrate(12)}catch(x){}render()}
+ else if(a==='pz')pzCheck();
+ else if(a==='mgs'){clearL();Array.prototype.forEach.call(document.querySelectorAll('#mg .pd'),function(x){x.classList.remove('on')});mg.s=[Math.floor(Math.random()*9),Math.floor(Math.random()*9)];mg.run=true;mgNext()}
+ else if(a==='pad'){if(!mg.run||mg.busy)return;var p=+b.getAttribute('data-p');lit(p);
+  if(p===mg.s[mg.pos]){mg.pos++;if(mg.pos===mg.s.length){var c=mg.s.length;mg.busy=true;if(c>=7)mgEnd(c);else{mset('Correct!');L(mgNext,700)}}}else mgEnd(mg.s.length-1)}
+ else if(a==='sps')sprintStart();
+ else if(a==='sn')sprintTap(b)});
+document.addEventListener('input',function(e){var n=e.target.getAttribute&&e.target.getAttribute('data-n');if(n==='in'||n==='gr'){day(view)[n]=e.target.value.slice(0,400);save()}});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'&&e.target.id==='pin'){e.preventDefault();pzCheck()}});
+window.addEventListener('hashchange',function(){view='';render(true)});
+load();render();
+</script>
+</body>
+</html>
